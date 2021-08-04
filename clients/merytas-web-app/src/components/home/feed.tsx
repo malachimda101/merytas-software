@@ -37,7 +37,7 @@ const feedPost2 = {
 };
 
 interface FeedProps {
-    forum: string
+    forum?: string
 }
 
 const Feed: React.FC<FeedProps> = ({ forum }) => { 

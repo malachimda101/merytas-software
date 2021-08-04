@@ -13,7 +13,7 @@ const Home: React.FC = () => {
           <LeaderBoard />
         </div>
         <div className="col">
-          <Feed forum={""}/>
+          <Feed />
         </div>
         <div className="col">
           <Trending />
