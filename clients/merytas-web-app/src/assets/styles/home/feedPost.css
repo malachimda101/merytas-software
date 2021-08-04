@@ -1,0 +1,133 @@
+.feed-post {
+  border-width: 1px;
+  border-style: solid;
+  padding: 20px;
+  height: 22vh;
+  width: 48vw;
+  margin-bottom: 2vh;
+
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  background: white;
+}
+
+.user-profile-feed {
+  display: flex;
+  justify-content: start;
+}
+
+.profile-name-feed {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+}
+
+.username-feed {
+  font-size: 12px;
+  align-items: center;
+}
+
+.profile-img-feed {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-info-feed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-img-container-feed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.percent {
+  font-size: 14px;
+  color: green;
+}
+
+.percent-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1vw;
+  text-align: center;
+}
+
+.feed-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  margin-top: 2vh;
+  font-size: 22px;
+}
+
+.feed-info-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8vh;
+  align-items: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+}
+
+.like-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.comment-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.comments {
+  display: flex;
+  align-items: center;
+}
+
+.forum {
+  cursor: pointer;
+}
+
+.status-open {
+  font-size: 18px;
+  color: green;
+  display: flex;
+}
+
+.status-closed {
+  font-size: 18px;
+  color: red;
+  display: flex;
+}
+
+.percent-return {
+  color: green;
+}
+
+.return-percent {
+  display: flex;
+  color: black;
+}

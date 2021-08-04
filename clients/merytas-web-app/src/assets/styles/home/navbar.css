@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.title-text {
+  font-size: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  margin-top: 3vh;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5vw;
+  margin-left: 10vw;
+}
+
+.nav-line {
+  background: black;
+  height: 1px;
+  width: 90vw;
+  margin-left: 5vw;
+}
+
+.search-bar {
+  width: 50vw;
+  font-size: 22px;
+  font-family: "Georama";
+  padding-left: 20px;
+  height: 5vh;
+  position: absolute;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  height: 5vh;
+  margin-top: 1vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-list {
+  position: absolute;
+  width: 50vw;
+  list-style: none;
+  z-index: 10;
+  background: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.search-list-item {
+  z-index: 10;
+  cursor: pointer;
+  -webkit-transition: background 1s;
+  transition: background 1s;
+  padding: 10px;
+}
+
+.search-list-item:hover {
+  background: #e9e9e9;
+}
+
+.forum-link {
+  color: black;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  padding-left: 10px;
+}
+
+.search-line {
+  background: black;
+  height: 0.5px;
+  width: 48vw;
+  /* margin-left: 5vw; */
+}
+
+.search-list-item-active {
+  z-index: 10;
+  cursor: pointer;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+  padding: 10px;
+  background: #e9e9e9;
+}
+
+.search-list-container {
+  margin-top: 7vh;
+  margin-right: 50vw;
+}

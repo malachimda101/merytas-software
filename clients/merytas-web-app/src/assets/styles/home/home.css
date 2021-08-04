@@ -1,0 +1,11 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
