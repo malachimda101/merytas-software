@@ -1,8 +1,8 @@
 import React, { useState, Component } from "react";
 import "../assets/styles/home/navbar.css";
-import UserProfile from "./userProfile";
 import { Input } from "reactstrap";
 import { Redirect, Link } from "react-router-dom";
+import blank_profile from "../assets/images/blank_profile.png";
 
 const profile1 = {
   firstName: "Malachi",
@@ -47,13 +47,14 @@ const NavBar: React.FC<NavBarProps> = ({ title }) => {
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.keyCode === 38 && cursor > -1) {
+    console.log(e.key, "e")
+    if (e.key === "ArrowUp" && cursor > -1) {
       e.preventDefault();
       setCursor((cursor) => cursor - 1);
-    } else if (e.keyCode === 40 && cursor < filteredForums.length - 1) {
+    } else if (e.key === "ArrowDown"  && cursor < filteredForums.length - 1) {
       e.preventDefault();
       setCursor((cursor) => cursor + 1);
-    } else if (e.keyCode === 13 && cursor > -1) {
+    } else if (e.key === "Enter" && cursor > -1) {
       setSearchTerm(filteredForums[cursor].label);
       if (filteredForums[cursor].label === title) {
         setSearchTerm("");
@@ -80,11 +81,15 @@ const NavBar: React.FC<NavBarProps> = ({ title }) => {
     <>
       <div className="navbar">
         <div className="title-text">{title}</div>
-        <UserProfile
-          firstName={profile1.firstName}
-          lastName={profile1.lastName}
-          userName={profile1.userName}
-        />
+        <div className="user-profile">
+          <div className="profile-img-container">
+            <img className="profile-img" src={blank_profile}></img>
+          </div>
+          <div className="user-info">
+            <div className="profile-name">{profile1.firstName + " " + profile1.lastName}</div>
+          <div className="username">{"@" + profile1.userName}</div>
+        </div>
+        </div>
       </div>
       <hr className="nav-line"></hr>
       <div className="search-bar-container">

@@ -5,8 +5,14 @@ import history from "./history";
 
 import HomeLayout from "../layouts/home-layout";
 import ForumLayout from "../layouts/forum-layout";
+import UserProfileLayout from "../layouts/user-profile-layout";
 
 const forums: string[] = ["TSLALOVERS", "AMCFANATICS"];
+
+const profile: {userId: string} = {
+  userId: "1eq6hqeg75hpsdf834y"
+}
+
 
 interface IProps {
   props?: any
@@ -34,6 +40,12 @@ export default class Routes extends React.Component<IProps, IState> {
             exact
             path="/home"
             layout={HomeLayout}
+            state={this.props}
+          />
+          <RouteWithLayout
+            exact
+            path={`/profile/${profile.userId}`}
+            layout={UserProfileLayout}
             state={this.props}
           />
           {this.state.forums.length !== 0 &&

@@ -91,3 +91,33 @@
   margin-top: 7vh;
   margin-right: 50vw;
 }
+
+.user-profile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1vh;
+}
+
+.profile-name {
+  display: flex;
+  font-size: 22px;
+  align-items: center;
+}
+
+.profile-img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-img-container {
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+}
