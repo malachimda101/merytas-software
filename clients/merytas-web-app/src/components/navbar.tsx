@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React, { useEffect, useState, Component } from "react";
 import "../assets/styles/home/navbar.css";
 import { Input } from "reactstrap";
 import { Redirect, Link } from "react-router-dom";
@@ -40,6 +40,12 @@ const NavBar: React.FC<NavBarProps> = ({ title }) => {
   const [cursor, setCursor] = useState(-1);
   const filteredForums = filterForums(forums, searchTerm);
   const [goToForum, setGoToForum] = useState(false);
+
+  const userId = "ad3d2af1-2372-4ea1-ac96-c7cf1aab4f09";
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/users/${userId}`).then(response => response.json()).then(data => console.log(data));
+  },[])
 
   function handleSearchBarChange(e: React.ChangeEvent<HTMLInputElement>) {
     setSearchTerm(e.target.value);
