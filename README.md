@@ -6,10 +6,10 @@ Welcome to the repository for Merytas, a mock social media site that I am using 
 To get started and run the project on your machine, first clone the repository. 
 
 <h3>Front End</h3>
-To activate the client's side, cd into "clients/merytas-web-app", and run npm-start. 
+To activate the client's side, cd into "clients/merytas-web-app", then run npm-start. 
 
 <h3>Back End</h3>
-To start the backend server, in a separate console, cd into "backend" then run mvn spring-boot:run.
+To start the backend server, in a separate console, cd into "backend", then run mvn spring-boot:run.
 
 <h2>Important Info</h2>
 As of now, in order for the API calls to work, the backend must be running on "http://localhost:8080" and the frontend on "http://localhost:3000".
