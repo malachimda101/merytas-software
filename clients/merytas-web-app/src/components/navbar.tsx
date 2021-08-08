@@ -25,6 +25,14 @@ interface NavBarProps {
   title: string
 }
 
+interface UserProfileApi {
+  id: string, 
+  userName: string,
+  firstName: string,
+  lastName: string,
+  imgUrl: string
+}
+
 const filterForums = (forums: Forums[], query: string) => {
   if (!query) {
     return forums;
@@ -37,14 +45,15 @@ const filterForums = (forums: Forums[], query: string) => {
 
 const NavBar: React.FC<NavBarProps> = ({ title }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [cursor, setCursor] = useState(-1);
+  const [cursor, setCursor] = useState<number>(-1);
   const filteredForums = filterForums(forums, searchTerm);
-  const [goToForum, setGoToForum] = useState(false);
+  const [goToForum, setGoToForum] = useState<boolean>(false);
+  const [userProfile, setUserProfile] = useState<UserProfileApi | null>(null)
 
   const userId = "ad3d2af1-2372-4ea1-ac96-c7cf1aab4f09";
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/users/${userId}`).then(response => response.json()).then(data => console.log(data));
+    fetch(`http://localhost:8080/api/users/${userId}`).then(response => response.json()).then(data => setUserProfile(data));
   },[])
 
   function handleSearchBarChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -83,7 +92,9 @@ const NavBar: React.FC<NavBarProps> = ({ title }) => {
     return <Redirect to={`/forums/${searchTerm}`} />;
   }
 
-  return (
+
+  if (userProfile) {
+    return (
     <>
       <div className="navbar">
         <div className="title-text">{title}</div>
@@ -92,8 +103,8 @@ const NavBar: React.FC<NavBarProps> = ({ title }) => {
             <img className="profile-img" src={blank_profile}></img>
           </div>
           <div className="user-info">
-            <div className="profile-name">{profile1.firstName + " " + profile1.lastName}</div>
-          <div className="username">{"@" + profile1.userName}</div>
+            <div className="profile-name">{userProfile.firstName + " " + userProfile.lastName}</div>
+          <div className="username">{"@" + userProfile.userName}</div>
         </div>
         </div>
       </div>
@@ -128,7 +139,12 @@ const NavBar: React.FC<NavBarProps> = ({ title }) => {
         ) : null}
       </div>
     </>
-  );
+  )}
+  else {
+    return (
+      null
+    )
+  }
 };
 
 export default NavBar;

@@ -20,25 +20,22 @@ public class UserController {
     public UserController(UserService service ){
         this.service = service;
     }
-    
+
     @GetMapping("/users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") UUID id) {
         Optional<User> userData = service.find(id);
-        System.out.println("GET Request Successful");
         return ResponseEntity.of(userData);
     }
 
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = service.findAll();
-        System.out.println("GET Request Successful");
         return ResponseEntity.ok().body(users);
     }
 
     @PostMapping("/users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User created = service.create(user);
-        System.out.println("POST Request Successful");
         return new ResponseEntity<>(created, HttpStatus.CREATED);
 
     }
