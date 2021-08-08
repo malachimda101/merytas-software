@@ -11,5 +11,5 @@ To activate the client's side, cd into "clients", then "merytas-web-app", and ru
 <h3>Back End</h3>
 To start the backend server, in a separate console, cd into "backend" then run mvn spring-boot:run.
 
-<h2>Important Info/h2>
+<h2>Important Info</h2>
 As of now, in order for the API calls to work, the backend must be running on "http://localhost:8080" and the frontend on "http://localhost:3000".
